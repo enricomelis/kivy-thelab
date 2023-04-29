@@ -44,7 +44,16 @@ The ```size``` and ```pos``` commands don't work in BoxLayout.
 The ```pos_hint``` is a dictionary that takes two inputs (one for x and one for y) choosing from three alternatives: x / center_x / right.
 
 ## Embed a Layout
+You can put more layouts inside others. 
+
+## AnchorLayout
+The default behavior creates a button that takes up all the space and is centered. We need to use size_hint.
+```anchor_x: ``` is "center" by default but can be changed to "right" or "left".
+Like a normal widget, two elements in an AnchorLayout with the same charateristics will overlap one on top of the other.
+Example: stacking vertically two Button in a BoxLayout that is anchored on the top-center of the AnchorLayout (made in the _AnchorLayour_ folder).
+
 
 ### Code Lines: 
 - ```size: 400, 200``` -> size: _width_, _height_
 - *1: ```size: "400dp", "200dp"```
+- ```orientation: "value"```
