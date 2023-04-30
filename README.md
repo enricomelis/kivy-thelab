@@ -52,6 +52,21 @@ The default behavior creates a button that takes up all the space and is centere
 Like a normal widget, two elements in an AnchorLayout with the same charateristics will overlap one on top of the other.
 Example: stacking vertically two Button in a BoxLayout that is anchored on the top-center of the AnchorLayout (made in the _AnchorLayour_ folder).
 
+## GridLayout
+!New concept: You can declare a new class with a layout just in the .kv file, without creating it in the Python file. You just have to add a @TypeLayout in the declaration, for example: 
+```
+GridLayoutExample:
+
+<GridLayoutExample@GridLayout>:
+    # declarations...
+```
+
+GridLayout needs rows and cols to be declared at the start, otherwise will not work and just stack the items in the bottom-left corner. You must specify at least one of them.
+If you just declare ```cols: 3``` with three Button elements, you will end up with three buttons layed out vertically.
+If you want to change the size of the buttons with the size_hint command you have to apply it (for example to change the width) to all the elements of the column.
+
+## StackLayout
+
 
 ### Code Lines: 
 - ```size: 400, 200``` -> size: _width_, _height_
