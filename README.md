@@ -66,9 +66,20 @@ If you just declare ```cols: 3``` with three Button elements, you will end up wi
 If you want to change the size of the buttons with the size_hint command you have to apply it (for example to change the width) to all the elements of the column.
 
 ## StackLayout
+StackLayout does not manage sizes, so you need to define them with size_hint, the default position is the top-left corner. If you add some elements without specifying their position, they will be placed one right next to the other (like some inline elements in HTML). Elements will wrap to the next line when the 100% of width is reached. 
+If you have both a __init__() function in the .py file and some declarations in the .kv file, the Python constructor will be executed first.
+You can create multiple buttons with a simple for loop in the .py file, to not declare a huge quantity of buttons in the .kv file manually.
+You can declare a fixed size with a dp parameters in the .py file, but you have to use Python syntax [*2] and import the needed metrics.
+If you want to change the behavior of the orientation, you need to express the direction in this format: ```orientation: "lr-tb"```. This means: left-to-right and top-to-bottom (default).
+If you declare too much stuff, you will need a ScrollView to visualize everything properly.
+
+## ScrollView
+It can have only one child. 
+To make it scrollable vertically, give a size_hint: 1, None and a height: self.minimum_height.
 
 
 ### Code Lines: 
 - ```size: 400, 200``` -> size: _width_, _height_
 - *1: ```size: "400dp", "200dp"```
 - ```orientation: "value"```
+- *2: ```size = (dp(100), dp(100))```
