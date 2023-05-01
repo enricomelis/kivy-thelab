@@ -77,6 +77,11 @@ If you declare too much stuff, you will need a ScrollView to visualize everythin
 It can have only one child. 
 To make it scrollable vertically, give a size_hint: 1, None and a height: self.minimum_height.
 
+## PageLayout
+It makes possibile to show different layouts in different pages.
+By default the black color of the layout is actually transparent, so the content from the previous page will still be displayed under the next.
+An example of this type of layout will not be present in the source files unless my laziness goes away.
+
 
 ### Code Lines: 
 - ```size: 400, 200``` -> size: _width_, _height_
